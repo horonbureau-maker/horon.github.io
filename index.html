@@ -6,33 +6,76 @@
     <title>Ритуальні послуги Кропивницький | Похоронне бюро "Пам'ять"</title>
     <meta name="description" content="Професійна організація поховання у Кропивницькому. Цілодобова підтримка, оформлення документів, транспортні послуги.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Ритуальне бюро "Пам'ять"</h1>
-            <p class="location">Кропивницький</p>
-            <a href="tel:+380XXXXXXXXX" class="btn-call">Зателефонувати зараз (24/7)</a>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                🕊️ Пам'ять
+            </div>
+            <div class="nav-contacts">
+                <a href="tel:+380000000000" class="nav-phone">+38 (000) 000-00-00</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="container hero-text">
+                <h1>Гідне прощання з близькими</h1>
+                <p>Повний комплекс ритуальних послуг у Кропивницькому. Ми беремо на себе всі турботи у найважчу хвилину. Працюємо 24/7.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+380000000000" class="btn btn-primary">Зателефонувати диспетчеру</a>
+                    <a href="#services" class="btn btn-secondary">Наші послуги</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="services">
+    <section id="services" class="services">
         <div class="container">
-            <h2>Наші послуги</h2>
+            <h2 class="section-title">Як ми можемо допомогти</h2>
             <div class="grid">
+                
                 <div class="card">
+                    <div class="card-icon">📋</div>
                     <h3>Організація поховання</h3>
-                    <p>Повний супровід та підготовка церемонії.</p>
+                    <p>Повний супровід: від вибору атрибутики до підготовки церемонії прощання. Враховуємо всі ваші побажання.</p>
                 </div>
+
                 <div class="card">
-                    <h3>Транспортні послуги</h3>
-                    <p>Перевезення по місту, області та Україні.</p>
+                    <div class="card-icon">🚐</div>
+                    <h3>Катафалк та транспорт</h3>
+                    <p>Спеціалізований транспорт для перевезення тіла по місту Кропивницький, області та всій території України.</p>
                 </div>
+
                 <div class="card">
+                    <div class="card-icon">📑</div>
                     <h3>Оформлення документів</h3>
-                    <p>Допомога з усіма юридичними питаннями.</p>
+                    <p>Оперативна допомога в отриманні медичних та державних свідоцтв про смерть. Юридичні консультації.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🕯️</div>
+                    <h3>Ритуальні товари</h3>
+                    <p>Широкий вибір трун, вінків, хрестів, одягу та інших необхідних ритуальних товарів на будь-який бюджет.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Зв'яжіться з нами</h2>
+                <p>Ми на зв'язку цілодобово, без вихідних та свят.</p>
+                <div class="contact-info">
+                    <p><strong>📍 Адреса:</strong> м. Кропивницький, вул. [Назва вулиці, номер]</p>
+                    <p><strong>📞 Телефон:</strong> <a href="tel:+380000000000" class="link-gold">+38 (000) 000-00-00</a></p>
+                    <p><strong>✉️ Email:</strong> <a href="mailto:info@memory.kr.ua" class="link-gold">info@memory.kr.ua</a></p>
                 </div>
             </div>
         </div>
@@ -40,8 +83,10 @@
 
     <footer>
         <div class="container">
-            <p>Адреса: м. Кропивницький, вул. [Ваша вулиця]</p>
-            <p>&copy; 2026 Всі права захищені</p>
+            <div class="footer-content">
+                <div class="footer-logo">🕊️ Пам'ять</div>
+                <p>&copy; 2026 Всі права захищені. Ритуальні послуги у Кропивницькому.</p>
+            </div>
         </div>
     </footer>
 
