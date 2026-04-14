@@ -37,7 +37,7 @@
             <h1 class="fade-up-2">Допомагаємо зберегти світлу пам'ять</h1>
             <p class="fade-up-3">Професійна організація поховань та повний юридичний супровід у Кропивницькому. Гідне прощання — наш обов'язок.</p>
             <div class="hero-btns fade-up-4">
-                <a href="tel:+380990506422" href="tel:+380953877088" class="btn btn-gold pulse-anim">Отримати консультацію</a>
+                <a href="tel:+380990506422" class="btn btn-gold pulse-anim">Отримати консультацію</a>
                 <a href="#services" class="btn btn-outline">Наші послуги</a>
             </div>
         </div>
@@ -73,7 +73,13 @@
                     <div class="card-body">
                         <h3>Організація поховання</h3>
                         <p>Повний комплекс: від оформлення довідки про смерть до поминального обіду.</p>
-                        <a href="tel:+380990506422" class="card-link">Детальніше →</a>
+                        <div class="phones-reveal-container">
+                            <a href="javascript:void(0);" class="card-link trigger-btn" onclick="showPhones(this)">Детальніше →</a>
+                            <div class="hidden-phones">
+                                <a href="tel:+380990506422" class="phone-option">📞 +38 (099) 050-64-22</a>
+                                <a href="tel:+380953877088" class="phone-option">📞 +38 (095) 387-70-88</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -82,7 +88,13 @@
                     <div class="card-body">
                         <h3>Транспортні послуги</h3>
                         <p>Катафалки VIP та економ класу. Перевезення тіла по Україні та з-за кордону.</p>
-                        <a href="tel:+380990506422" class="card-link">Детальніше →</a>
+                        <div class="phones-reveal-container">
+                            <a href="javascript:void(0);" class="card-link trigger-btn" onclick="showPhones(this)">Детальніше →</a>
+                            <div class="hidden-phones">
+                                <a href="tel:+380990506422" class="phone-option">📞 +38 (099) 050-64-22</a>
+                                <a href="tel:+380953877088" class="phone-option">📞 +38 (095) 387-70-88</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -91,7 +103,13 @@
                     <div class="card-body">
                         <h3>Ритуальні товари</h3>
                         <p>Великий вибір трун, вінків, хрестів та одягу для покійних у нашому магазині.</p>
-                        <a href="tel:+380990506422" class="card-link">Детальніше →</a>
+                        <div class="phones-reveal-container">
+                            <a href="javascript:void(0);" class="card-link trigger-btn" onclick="showPhones(this)">Детальніше →</a>
+                            <div class="hidden-phones">
+                                <a href="tel:+380990506422" class="phone-option">📞 +38 (099) 050-64-22</a>
+                                <a href="tel:+380953877088" class="phone-option">📞 +38 (095) 387-70-88</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -118,5 +136,15 @@
         </div>
     </footer>
 
+    <script>
+        function showPhones(element) {
+            // Ховаємо кнопку "Детальніше"
+            element.style.display = 'none';
+            
+            // Знаходимо блок з номерами відразу після кнопки і показуємо його
+            const phonesBlock = element.nextElementSibling;
+            phonesBlock.style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
