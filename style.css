@@ -176,3 +176,29 @@ body {
     .nav-content { gap: 10px; }
     .phone-link { padding: 8px 15px; font-size: 0.8rem; }
 }
+
+/* Фікс для кнопок у Hero, щоб вони правильно розсувалися */
+.hero-btns {
+    align-items: flex-start; /* Щоб кнопки не розтягувалися по висоті */
+}
+
+.hero-btns .phones-reveal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-btns .hidden-phones {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* На мобільних телефонах робимо кнопки на всю ширину */
+@media (max-width: 768px) {
+    .hero-btns .phones-reveal-container {
+        width: 100%;
+    }
+    .hero-btns .phone-option {
+        width: 100%;
+    }
+}
