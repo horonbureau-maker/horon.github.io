@@ -69,7 +69,6 @@ body {
     color: var(--text-dim);
 }
 
-/* Виправлення бага з кнопкою телефону */
 .phone-link {
     color: var(--text);
     text-decoration: none;
@@ -81,7 +80,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    white-space: nowrap; /* Ось це правило забороняє тексту переноситись на новий рядок! */
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .phone-link:hover {
@@ -139,21 +139,36 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    align-items: flex-start; /* Фікс для рівних кнопок */
 }
 
 .btn {
+    display: inline-block;
     padding: 18px 35px;
     text-decoration: none;
     font-weight: 600;
     border-radius: 4px;
     transition: var(--transition);
+    cursor: pointer;
 }
 
-.btn-gold { background: var(--accent); color: var(--dark); }
+.btn-gold { background: var(--accent); color: var(--dark); border: 1px solid var(--accent); }
 .btn-gold:hover { background: var(--accent-hover); transform: translateY(-3px); }
 
-.btn-outline { border: 1px solid #fff; color: #fff; }
+.btn-outline { border: 1px solid #fff; color: #fff; background: transparent; }
 .btn-outline:hover { background: #fff; color: var(--dark); }
+
+/* Контейнери для прихованих номерів у Hero */
+.hero-btns .phones-reveal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-btns .hidden-phones {
+    margin-top: 10px;
+    width: 100%;
+}
 
 /* Анімації (Fade In Up) */
 @keyframes fadeInUp {
@@ -240,7 +255,7 @@ body {
 
 .card-body { padding: 30px; position: relative; z-index: 2; background: var(--dark-soft); }
 .card-body h3 { font-family: 'Playfair Display', serif; margin-top: 0; }
-.card-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; transition: 0.3s; }
+.card-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; transition: 0.3s; cursor: pointer; }
 .card-link:hover { color: #fff; padding-left: 5px; }
 
 .service-card:hover {
@@ -271,29 +286,54 @@ body {
     font-size: 0.8rem;
 }
 
+/* --- СТИЛІ ДЛЯ ПРИХОВАНИХ НОМЕРІВ --- */
+.hidden-phones {
+    display: none !important; /* Примусово ховаємо до кліку */
+    flex-direction: column;
+    gap: 10px; 
+    margin-top: 15px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.phone-option {
+    display: block;
+    color: var(--accent); 
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.phone-option:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ (Мобільна версія) */
 @media (max-width: 768px) {
-    .hero-btns { flex-direction: column; width: 100%; }
+    .hero-btns { flex-direction: column; width: 100%; align-items: center; }
+    .hero-btns .phones-reveal-container { width: 100%; }
+    .hero-btns .phone-option { width: 100%; }
     .btn { width: 100%; text-align: center; box-sizing: border-box; }
     
-    /* Фікс шапки для мобільних */
-    .nav-content {
-        gap: 10px;
-    }
+    .nav-content { gap: 10px; }
     .logo-icon { font-size: 1.5rem; }
     .brand { font-size: 1.1rem; }
     .sub-brand { font-size: 0.6rem; letter-spacing: 1px; }
     
-    .phone-link {
-        padding: 8px 12px; /* Зменшили відступи */
-        font-size: 0.85rem; /* Зменшили шрифт */
-    }
+    .phone-link { padding: 8px 12px; font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
-    /* На дуже вузьких екранах (iPhone SE тощо) */
-    .phone-text {
-        font-size: 0.75rem; /* Ще трохи менший шрифт, щоб точно влізло */
-    }
+    .phone-text { font-size: 0.75rem; }
     .brand { font-size: 1rem; }
 }
