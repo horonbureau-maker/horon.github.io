@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ритуальна служба "Пам'ять" | Кропивницький</title>
+    <title>Ритуальна служба "Horon" | Кропивницький</title>
     <meta name="description" content="Повний спектр ритуальних послуг у Кропивницькому. Гідна організація, власне виробництво, цілодобова допомога.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
             </div>
             <div class="nav-actions">
                 <div class="phones-reveal-container">
-                    <a href="javascript:void(0);" class="card-link trigger-btn" onclick="showPhones(this)">Подзвонити 📞</a>
+                    <a href="javascript:void(0);" class="phone-link trigger-btn" onclick="showPhones(this)">Подзвонити 📞</a>
                     <div class="hidden-phones">
                         <a href="tel:+380990506422" class="phone-option">📞 +38 (099) 050-64-22</a>
                         <a href="tel:+380953877088" class="phone-option">📞 +38 (095) 387-70-88</a>
@@ -139,12 +139,16 @@
 
     <script>
         function showPhones(element) {
-            // Ховаємо кнопку "Детальніше"
+            // Приховуємо саме той елемент, на який натиснули
             element.style.display = 'none';
             
-            // Знаходимо блок з номерами відразу після кнопки і показуємо його
-            const phonesBlock = element.nextElementSibling;
-            phonesBlock.style.display = 'flex';
+            // Знаходимо блок з номерами, який йде наступним у контейнері
+            const container = element.closest('.phones-reveal-container');
+            const phonesBlock = container.querySelector('.hidden-phones');
+            
+            if (phonesBlock) {
+                phonesBlock.style.setProperty('display', 'flex', 'important');
+            }
         }
     </script>
 </body>

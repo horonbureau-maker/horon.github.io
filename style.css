@@ -69,7 +69,6 @@ body {
     color: var(--text-dim);
 }
 
-/* Виправлення бага з кнопкою телефону */
 .phone-link {
     color: var(--text);
     text-decoration: none;
@@ -82,6 +81,7 @@ body {
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .phone-link:hover {
@@ -112,109 +112,14 @@ body {
     padding-top: 80px;
 }
 
-.hero-badge {
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     margin: 0 0 20px 0;
     line-height: 1.1;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    color: #e0e0e0;
-    font-size: 1.1rem;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.btn {
-    padding: 18px 35px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: var(--transition);
-}
-
-.btn-gold { background: var(--accent); color: var(--dark); }
-.btn-gold:hover { background: var(--accent-hover); transform: translateY(-3px); }
-
-.btn-outline { border: 1px solid #fff; color: #fff; }
-.btn-outline:hover { background: #fff; color: var(--dark); }
-
-/* Анімації (Fade In Up) */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-}
-
-.fade-up-1 { opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards; }
-.fade-up-2 { opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards; }
-.fade-up-3 { opacity: 0; animation: fadeInUp 0.8s ease-out 0.6s forwards; }
-.fade-up-4 { opacity: 0; animation: fadeInUp 0.8s ease-out 0.8s forwards; }
-
-.pulse-anim { animation: pulse 2s infinite; }
-
-/* Переваги */
-.features {
-    padding: 80px 0;
-    background: var(--dark-soft);
-}
-
-.grid-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
-
-.feature-item {
-    position: relative;
-    padding-left: 60px;
-    transition: var(--transition);
-}
-
-.feature-item:hover { transform: translateY(-5px); }
-
-.feat-num {
-    position: absolute;
-    left: 0;
-    top: -10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: rgba(212, 175, 55, 0.15);
-    line-height: 1;
-}
-
-.feature-item h4 { margin: 0 0 10px 0; color: var(--accent); font-size: 1.2rem; }
-
-/* Картки послуг */
-.services { padding: 100px 0; }
-.section-heading {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 60px;
-}
-
+/* Картки */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -229,107 +134,45 @@ body {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-.card-img {
-    height: 240px;
-    background-size: cover;
-    background-position: center;
-    transition: var(--transition);
-}
+.card-body { padding: 30px; }
 
-.service-card:hover .card-img { transform: scale(1.05); }
+/* --- ФІКС ПРИХОВАНИХ НОМЕРІВ --- */
 
-.card-body { padding: 30px; position: relative; z-index: 2; background: var(--dark-soft); }
-.card-body h3 { font-family: 'Playfair Display', serif; margin-top: 0; }
-.card-link { color: var(--accent); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; transition: 0.3s; }
-.card-link:hover { color: #fff; padding-left: 5px; }
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-
-/* Footer */
-.main-footer {
-    background: #050505;
-    padding: 80px 0 0 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 60px;
-    padding-bottom: 60px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    color: #555;
-    font-size: 0.8rem;
-}
-
-/* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ (Мобільна версія) */
-@media (max-width: 768px) {
-    .hero-btns { flex-direction: column; width: 100%; }
-    .btn { width: 100%; text-align: center; box-sizing: border-box; }
-    
-    /* Фікс шапки для мобільних */
-    .nav-content {
-        gap: 10px;
-    }
-    .logo-icon { font-size: 1.5rem; }
-    .brand { font-size: 1.1rem; }
-    .sub-brand { font-size: 0.6rem; letter-spacing: 1px; }
-    
-    .phone-link {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .phone-text {
-        font-size: 0.75rem;
-    }
-    .brand { font-size: 1rem; }
-}
-
-/* --- ДОДАНІ СТИЛІ ДЛЯ КНОПОК ТЕЛЕФОНІВ В КАРТКАХ --- */
-
-/* Контейнер для прихованих номерів */
 .hidden-phones {
-    display: none; 
+    display: none !important; /* ПРИМУСОВО ХОВАЄМО ВСЮДИ ДО КЛІКУ */
     flex-direction: column;
     gap: 10px; 
     margin-top: 15px;
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Стиль для самих номерів телефону (адаптовано під темну тему) */
+/* Коли JS міняє стиль, inline-стиль переб'є !important за допомогою setProperty у скрипті */
+
 .phone-option {
-    display: inline-block;
+    display: block;
     color: var(--accent); 
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 14px;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: 1px solid var(--accent);
-    border-radius: 5px;
-    transition: var(--transition);
+    border-radius: 8px;
     text-align: center;
+    transition: 0.3s;
+    background: transparent;
 }
 
 .phone-option:hover {
-    background-color: var(--accent);
+    background: var(--accent);
     color: var(--dark);
 }
 
-/* Анімація плавної появи */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .nav-content { gap: 10px; }
+    .phone-link { padding: 8px 15px; font-size: 0.8rem; }
 }
